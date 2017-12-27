@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+
+import autotype
+
+import argparse
+import sys
+
+if __name__ == '__main__':
+	
+	parser = argparse.ArgumentParser(description='A Unicode-friendly tool for faking key presses to type strings on X11')
+	parser.add_argument('text', type=str, nargs='?', default='', help='The text to type.')
+	parser.add_argument('-f', '--file', type=argparse.FileType('r'), dest='file', default=sys.stdin, help='The file to read text from. Defaults to STDIN. Ignored if text passed as argument.')
+	parser.add_argument('-d', '--delay', type=float, default=0.03, nargs='?', dest='delay', help='The delay between key presses in seconds')
+	parser.add_argument('-p', '--down-for', type=float, default=0, nargs='?', dest='down_for', help='How long to keep each key pressed for')
+	
+	args = parser.parse_args()
+
+	if args.text:
+		autotype.type(args.text, args.delay, args.down_for)
+	
+	else:
+		text = args.file.read(1 << 20)
+		while (text):
+			autotype.type(text, args.delay, args.down_for)
+			text = args.file.read(1 << 20)
