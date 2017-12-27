@@ -41,4 +41,4 @@ and run `install.sh` (May require root. To install just for one user, ensure the
 
 ## License
 
-Autotype is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+Autotype is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
