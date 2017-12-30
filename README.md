@@ -37,7 +37,7 @@ To install the command line tool, clone the repo with
 git clone https://github.com/gemdude46/autotype.git
 ```
 
-and run `install.sh` (May require root. To install just for one user, ensure the python module is installed, then copy `app/autotupe` to somewhere on your PATH.)
+and run `install.sh` (May require root. To install just for one user, ensure the python module is installed, then copy `app/autotype` to somewhere on your PATH.)
 
 ## License
 
